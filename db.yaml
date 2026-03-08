@@ -1,0 +1,10 @@
+services:
+  group_db:
+    image: postgres:latest
+    container_name: group-cybersec-database
+    ports:
+      - ${DATABASE_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_DB: ${DATABASE_DB}
