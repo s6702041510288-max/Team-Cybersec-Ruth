@@ -1,10 +1,12 @@
 services:
   group_admin:
     image: dpage/pgadmin4:latest
-    container_name: group_tuptim_admin
-    ports:
-      - ${ADMIN_PORT}:443
-      - ${ADMIN_PORT_HTTP}:80
+    container_name: group_admin_tubtim
+    # ports:
+    #   - ${ADMIN_PORT_HTTP}:80
     environment:
       - PGADMIN_DEFAULT_EMAIL=${ADMIN_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${ADMIN_PASS}
+      - PGADMIN_CONFIG_SCRIPT_NAME='/pgadmin'
+    networks:
+      - secure-net
