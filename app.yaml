@@ -2,8 +2,8 @@ services:
   group_app:
     image: prawee/strapi
     container_name: group-tuptim-app
-    ports:
-      - ${APP_PORT}:1337
+    # ports:
+    #   - ${APP_PORT}:1337
     environment:
       DATABASE_CLIENT: ${APP_CLIENT}
       DATABASE_NAME: ${APP_DB_NAME}
